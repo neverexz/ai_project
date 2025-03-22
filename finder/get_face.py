@@ -14,14 +14,10 @@ def find_face(image):
         cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
         
     return image
-    
-# cv2.imshow('detected', image)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
 
 def image_to_base64(image) -> str:
-    # Преобразуем изображение в формат PNG
+    
     _, buffer = cv2.imencode('.png', image)
-    # Кодируем изображение в base64
     img_str = base64.b64encode(buffer).decode('utf-8')
+    
     return img_str
