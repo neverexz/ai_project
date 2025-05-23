@@ -1,0 +1,11 @@
+services:
+  web:
+    platform: linux/amd64
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: >
+      sh -c "python mysite/manage.py runserver 0.0.0.0:8000"
