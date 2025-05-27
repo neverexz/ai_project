@@ -7,7 +7,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../.
 from finder import get_face, yolo, get_pose
 import cv2
 
-# Create your views here.
 def filter(request):
     return render(request, template_name='opencv/filter.html')
 
@@ -19,7 +18,7 @@ def image_upload(request):
             img_obj = form.instance
             path = img_obj.image.path
             category = form.cleaned_data['category']
-            
+            print(category)
             if category == 'f':
                 img_obj = get_face.find_face(path)
             if category == 'y':

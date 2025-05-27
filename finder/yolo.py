@@ -15,5 +15,5 @@ def find_obj(image):
     name = generate_random_name()
     results = model.predict(source=image, save=True, name=f'{name}')
     filename = os.path.basename(image)
-    new_image = cv2.imread(f'../runs/detect/{name}/{filename}')
+    new_image = cv2.imread(f'../runs/detect/{filename}')
     return new_image
